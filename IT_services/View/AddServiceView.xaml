@@ -1,0 +1,35 @@
+﻿<Window x:Class="IT_services.View.AddServiceView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT_services.View"
+        xmlns:viewmodel="clr-namespace:IT_services.ViewModel"
+        mc:Ignorable="d"
+        Title="Додати послугу" Height="458.353" Width="423.086"
+        WindowStartupLocation="CenterScreen">
+    <Grid Name="grMain1">
+        <Grid.DataContext>
+            <viewmodel:AddServiceViewModel>
+            </viewmodel:AddServiceViewModel>
+        </Grid.DataContext>
+        <Label Content="Послуга" HorizontalAlignment="Left" Margin="148,25,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+        <Label Content="Назва:" HorizontalAlignment="Left" Height="28" Margin="32,82,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="16"/>
+        <TextBox Name="nameSer" Text="{Binding serviseName}"  HorizontalAlignment="Left" Height="28" Margin="122,82,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="256" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Період доступності:" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.511,-1.048" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Від:" HorizontalAlignment="Left" Margin="212,128,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
+        <Label Content="До:" HorizontalAlignment="Left" Height="31" Margin="212,162,0,0" VerticalAlignment="Top" Width="32" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Місто:" HorizontalAlignment="Left" Height="38" Margin="32,198,0,0" VerticalAlignment="Top" Width="97" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Вартість:" HorizontalAlignment="Left" Height="30" Margin="30,236,0,0" VerticalAlignment="Top" Width="76" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Телефон:" HorizontalAlignment="Left" Height="37" Margin="28,273,0,0" VerticalAlignment="Top" Width="111" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Опис:" HorizontalAlignment="Left" Height="30" Margin="32,315,0,0" VerticalAlignment="Top" Width="102" FontFamily="Arial" FontSize="16"/>
+        <TextBox x:Name="startSer" Text="{Binding serviseStart}" HorizontalAlignment="Left" Height="28" Margin="255,128,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="123" FontFamily="Arial" FontSize="16"/>
+        <TextBox x:Name="endSer" Text="{Binding serviseEnd}"  HorizontalAlignment="Left" Height="28" Margin="255,162,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="123" FontFamily="Arial" FontSize="16"/>
+        <TextBox x:Name="citySer" Text="{Binding serviseCity}"  HorizontalAlignment="Left" Height="28" Margin="122,198,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="256" FontFamily="Arial" FontSize="16"/>
+        <TextBox x:Name="priceSer" Text="{Binding servisePrice}"  HorizontalAlignment="Left" Height="28" Margin="122,236,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="256" FontFamily="Arial" FontSize="16"/>
+        <TextBox x:Name="phoneSer" Text="{Binding servisePhone}"  HorizontalAlignment="Left" Height="28" Margin="122,275,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="256" FontFamily="Arial" FontSize="16"/>
+        <TextBox x:Name="decriptionSer" Text="{Binding serviseDescription}"  HorizontalAlignment="Left" Height="28" Margin="122,315,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="256" FontFamily="Arial" FontSize="16"/>
+        <Button Click="Accept_Click" Content="Додати" Command="{Binding AddSer}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Margin="134,369,0,0" VerticalAlignment="Top" Width="135" Height="33"/>
+    </Grid>
+</Window>
+

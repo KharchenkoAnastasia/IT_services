@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Condition="'$(MSBuildThisFileDirectory)' != '' And HasTrailingSlash('$(MSBuildThisFileDirectory)')">
+    <Content Include="$(MSBuildThisFileDirectory)libcef.dll">
+      <Link>libcef.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)libEGL.dll">
+      <Link>libEGL.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)libGLESv2.dll">
+      <Link>libGLESv2.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)ffmpegsumo.dll">
+      <Link>ffmpegsumo.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)d3dcompiler_47.dll">
+      <Link>d3dcompiler_47.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)d3dcompiler_43.dll">
+      <Link>d3dcompiler_43.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)pdf.dll">
+      <Link>pdf.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)cef.pak">
+      <Link>cef.pak</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)cef_100_percent.pak">
+      <Link>cef_100_percent.pak</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)cef_200_percent.pak">
+      <Link>cef_200_percent.pak</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+     <Content Include="$(MSBuildThisFileDirectory)devtools_resources.pak">
+      <Link>devtools_resources.pak</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)icudtl.dat">
+      <Link>icudtl.dat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

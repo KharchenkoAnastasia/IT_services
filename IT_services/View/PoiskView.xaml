@@ -1,0 +1,56 @@
+﻿<Window x:Class="IT_services.View.PoiskView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT_services.View"
+        xmlns:viewmodel="clr-namespace:IT_services.ViewModel"
+        mc:Ignorable="d"
+        Title="Пошук" Height="574.277" Width="1101.128"
+        WindowStartupLocation="CenterScreen">
+    <Grid Name="PoiskV">
+        <Grid.DataContext>
+            <viewmodel:CustomerViewModel>
+            </viewmodel:CustomerViewModel>
+        </Grid.DataContext>
+        <Button Content="Пошук" Command="{Binding Vuv}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Margin="606,33,0,0" VerticalAlignment="Top" Width="166" Height="35" FontFamily="Arial" FontSize="16"/>
+        <Button Content="Назад" Command="{Binding Nazad}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Height="41" Margin="48,478,0,0" VerticalAlignment="Top" Width="124"/>
+        <DataGrid Name="dgC" ItemsSource="{Binding TablePoisk }" AutoGenerateColumns="False"  CanUserDeleteRows="False" CanUserAddRows="False" HorizontalAlignment="Left" Height="166" Margin="48,292,0,0" VerticalAlignment="Top" Width="993">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Width="0" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="Назва" Width="200" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Від" Width="150" Binding="{Binding start}"/>
+                <DataGridTextColumn Header="До" Width="150" Binding="{Binding konets }"/>
+                <DataGridTextColumn Header="Місто" Width="150" Binding="{Binding city }"/>
+                <DataGridTextColumn Header="Ціна" Width="150" Binding="{Binding price }"/>
+                <DataGridTextColumn Header="Виконавець:" Width="150" Binding="{Binding name1 }"/>
+                <DataGridTextColumn Header="Телефон" Width="150" Binding="{Binding phone }"/>
+                <DataGridTextColumn Header="Опис" Width="200" Binding="{Binding decription }"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name="poiskServise" Text="{Binding StringPoisk}" HorizontalAlignment="Left" Height="30" Margin="159,33,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="414" FontFamily="Arial" FontSize="20"/>
+        <Button Content="Застосувати" Command="{Binding Filter}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Margin="339,188,0,0" VerticalAlignment="Top" Width="234" Height="28" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Пошук:" HorizontalAlignment="Left" Margin="53,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" Width="87"/>
+        <Grid HorizontalAlignment="Left" Height="129" Margin="53,89,0,0" VerticalAlignment="Top" Width="520">
+            <Label Content="Ціна:" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+            <Label Content="Від" HorizontalAlignment="Left" Margin="92,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+            <TextBox Text="{Binding OtPrice}" HorizontalAlignment="Left" Height="30" Margin="134,10,-26,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="98" FontFamily="Arial" FontSize="20" RenderTransformOrigin="3.446,0.651"/>
+            <Label Content="До" HorizontalAlignment="Left" Margin="93,51,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+            <TextBox Text="{Binding DoPrice}" HorizontalAlignment="Left" Height="30" Margin="135,53,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="98" FontFamily="Arial" FontSize="20" RenderTransformOrigin="3.446,0.651"/>
+            <Label Content="Дата:" HorizontalAlignment="Left" Margin="278,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+            <TextBox Text="{Binding OtDate}" Height="31" Margin="343,13,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontFamily="Arial" FontSize="20" RenderTransformOrigin="3.446,0.651"/>
+            <Label Content="Місто:" HorizontalAlignment="Left" Margin="276,53,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" RenderTransformOrigin="3.048,0.129"/>
+        </Grid>
+        <ComboBox Name="CityF" HorizontalAlignment="Left" Height="28" Margin="398,143,0,0" VerticalAlignment="Top" Width="173" FontFamily="Arial" FontSize="16">
+            <TextBlock>Запоріжжя</TextBlock>
+            <TextBlock>Київ</TextBlock>
+            <TextBlock>Львіві</TextBlock>
+            <TextBlock>Харків</TextBlock>
+            
+            
+        </ComboBox>
+        <Button Content="Замовити" Command="{Binding Order}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Height="41" Margin="201,478,0,0" VerticalAlignment="Top" Width="124"/>
+        <Label Content="Результати пошуку" HorizontalAlignment="Left" Margin="422,253,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+    </Grid>
+</Window>

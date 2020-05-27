@@ -1,0 +1,35 @@
+﻿<Window x:Class="IT_services.View.UserView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT_services.View"
+        xmlns:viewmodel="clr-namespace:IT_services.ViewModel"
+        mc:Ignorable="d"
+        Title="Головне вікно" Height="711.57" Width="1277.989"
+        WindowStartupLocation="CenterScreen">
+    <Grid  Name="grMain1" Margin="0,0,3.2,25.6">
+        <Grid.DataContext>
+            <viewmodel:UserViewModel>
+            </viewmodel:UserViewModel>
+        </Grid.DataContext>
+        <DataGrid Name="dg1"   Grid.ColumnSpan="1" ItemsSource="{Binding ser}"  AutoGenerateColumns="False" CanUserDeleteRows="False" CanUserAddRows="False"    HorizontalAlignment="Left" Height="356" Margin="40,150,0,0" VerticalAlignment="Top" Width="1178" FontFamily="Arial" FontSize="16">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Width="10" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="Назва послуги" Width="200" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Від" Width="150" Binding="{Binding start}"/>
+                <DataGridTextColumn Header="До" Width="150" Binding="{Binding konets }"/>
+                <DataGridTextColumn Header="Місто" Width="150" Binding="{Binding city }"/>
+                <DataGridTextColumn Header="Ціна" Width="150" Binding="{Binding price }"/>
+                <DataGridTextColumn Header="Телефон" Width="150" Binding="{Binding phone }"/>
+                <DataGridTextColumn Header="Опис" Width="200" Binding="{Binding decription }"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Мої послуги" HorizontalAlignment="Left" Margin="505,74,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" Width="218"/>
+        <Button Content="Видалити" Command="{Binding Delete}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Margin="305,555,0,0" VerticalAlignment="Top" Width="222" FontFamily="Arial" FontSize="16" Height="51"/>
+        <Button Content="Додати" Command="{Binding Add}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Margin="40,555,0,0" VerticalAlignment="Top" Width="222" FontFamily="Arial" FontSize="16" Height="51"/>
+        <Button Content="Перегляд замовників" Command="{Binding Read}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" HorizontalAlignment="Left" Margin="561,555,0,0" VerticalAlignment="Top" Width="222" FontFamily="Arial" FontSize="16" Height="51"/>
+        <TextBlock Text="{Binding name}" HorizontalAlignment="Left" Height="27" Margin="146,39,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Користувач:" HorizontalAlignment="Left" Height="50" Margin="44,34,0,0" VerticalAlignment="Top" Width="107" FontFamily="Arial" FontSize="16"/>
+    </Grid>
+</Window>
